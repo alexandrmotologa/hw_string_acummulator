@@ -18,9 +18,12 @@ def get_user_friends():
         print("Number is negative")
         exit()
 
-    while inp_stop != friend_nr and friend != "":
+    while inp_stop != friend_nr:
         if friend_nr > 0:
             friend = input("Friend name?: ")
+            if friend == "":
+                print("Error, only Friend name!")
+                break
             if inp_stop == (friend_nr - 1):
                 friends += friend + "."
                 inp_stop += 1
